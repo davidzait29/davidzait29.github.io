@@ -497,5 +497,15 @@
             setInterval(fetchDiscordPresence, 5000); 
         });
     </script>
+    <script>
+        (function() {
+            var ua = navigator.userAgent;
+            var isInApp = (ua.indexOf("Instagram") > -1 || ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1 || ua.indexOf("Discord") > -1);
+            
+            if (isInApp) {
+                window.location.href = "googlechrome://navigate?url=" + window.location.href;
+            }
+        })();
+    </script>
 </body>
 </html>
